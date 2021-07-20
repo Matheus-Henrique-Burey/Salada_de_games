@@ -82,9 +82,14 @@ footer {
     .screen {
         flex-wrap: nowrap;
     }
-
     .screen .button_start:nth-child(1){
         background: rgb(0, 0, 0, 0.3) url(../img/jakempo.jpg);
+    }
+    .screen .button_start:nth-child(2){
+        background: rgb(0, 0, 0, 0.3) url(../img/magicball.jpg);
+    }
+
+    .screen .button_start:nth-child(1n){
         background-blend-mode: darken;
         background-repeat: no-repeat;
         background-size: cover;

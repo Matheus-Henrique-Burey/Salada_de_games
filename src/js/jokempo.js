@@ -69,8 +69,8 @@ const verificarVencedor = (minhaEscolha, divPlayers) => {
 
 const mostraEscolhas = (minha , pc) => {
     let divImg = pegaSeletor('escolha');
-    divImg[0].src = `src/img/${minha}.png`
-    divImg[1].src = `src/img/${pc}.png`
+    divImg[0].src = `src/img/jokempo/${minha}.png`
+    divImg[1].src = `src/img/jokempo/${pc}.png`
 }
 
 const vencedorRodada = (player, vencedor) => {
