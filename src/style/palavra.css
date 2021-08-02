@@ -1,0 +1,18 @@
+.screen{
+    flex-wrap: wrap;
+    width: 98%;
+    background-color: #fff;
+}
+tr{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: inherit;
+}
