@@ -1,104 +1,109 @@
-body, header, footer, h1, h2, button {
-    margin: 0;
-    padding: 0;
-    border: none;
+body, header, footer, h1, h2, button, a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #ccc;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 a {
-    transition: 0.4s;
-    color: #FFF;
-    text-decoration: none;
+  transition: 0.4s;
+  color: #FFF;
+  text-decoration: none;
 }
 
 /* HEADER */
 header {
-    background-color: #31327a;
-    color: #FFF;
-    text-align: center;
-    padding: 30px;
+  background-color: #31327a;
+  color: #FFF;
+  text-align: center;
+  padding: 20px;
 }
 
 /* FOOTER */
 
 footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 12px;
-    background-color: #9c9c9c5e;
-    color: #5e5e5e;
+  text-align: center;
+  padding: 10px;
+  font-size: 10px;
+  background-color: #9c9c9c5e;
+  color: #5e5e5e;
 }
 
 /* GERAL */
-.screen {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 900px;
-    height: 70vh;
-    margin: 50px auto;
+#screen {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  max-width: 900px;
+  min-height: 60vh;
+  margin: auto;
 }
 
-.voltar {
-    top: 63px;
-    display: inline-block;
-    background-color: #0000;
-    padding: 5px;
-    font-size: 20px;
-    border-radius: 5px;
-    position: absolute;
-    transition: 0.3s;
-    left: 10px;
+.back {
+  top: 47px;
+  display: inline-block;
+  background-color: #0000;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  position: absolute;
+  transition: 0.3s;
+  left: 10px;
 }
 
-.voltar:hover {
-    background-color: #5253ad;
+.back:hover {
+  background-color: #5253ad;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 /* PAGINA INICIAL */
-.screen .button_start {
-    width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border-bottom: 1px solid #5253ad;
-    background-color: #4d4faf;
+#screen a {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #5253ad;
+  background-color: #4d4faf;
+  text-align: center;
 }
 
-.screen .button_start:hover {
-    opacity: 0.8;
+#screen a:hover {
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 768px) {
-    
-    .screen {
-        flex-wrap: nowrap;
-    }
-    .screen .button_start:nth-child(1){
-        background: rgb(0, 0, 0, 0.3) url(../img/jakempo.jpg);
-    }
-    .screen .button_start:nth-child(2){
-        background: rgb(0, 0, 0, 0.3) url(../img/magicball.jpg);
-    }
-    .screen .button_start:nth-child(3){
-        background: rgb(0, 0, 0, 0.3) url(../img/slotmachine.jpg);
-    }
-    .screen .button_start:nth-child(4){
-        background: rgb(0, 0, 0, 0.3) url(../img/cacapalavras.jpg);
-    }
+  #screen {
+    flex-wrap: nowrap;
+  }
 
-    .screen .button_start:nth-child(1n){
-        background-blend-mode: darken;
-        background-size: cover;
-        background-position: center;
-    }
+  #screen a:nth-child(1){
+    background: rgb(0, 0, 0, 0.4) url(../img/jakempo.jpg);
+  }
+  #screen a:nth-child(2){
+    background: rgb(0, 0, 0, 0.4) url(../img/magicball.jpg);
+  }
+  #screen a:nth-child(3){
+    background: rgb(0, 0, 0, 0.4) url(../img/slotmachine.jpg);
+  }
+  #screen a:nth-child(4){
+    background: rgb(0, 0, 0, 0.4) url(../img/wordgame.jpg);
+  }
+
+  #screen a:nth-child(1n){
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+  }
 }

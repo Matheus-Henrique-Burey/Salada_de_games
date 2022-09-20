@@ -1,87 +1,43 @@
-const pegaSeletor = (clase) => {
-    let button = document.getElementsByClassName(clase);
-    return button
+const sortNumber = () => Math.floor(Math.random() * 3)
+
+const checkEventClick = (event) => {
+  const myChoice = event.target.alt
+  checkWinner(myChoice)
 };
 
-const numeroRandon = () => {
-    return Math.floor(Math.random() * 3);
+const checkWinner = (myChoice) => {
+  const list_options = ["pedra", "papel", "tesoura"];
+  const pcChoice = list_options[sortNumber()];
+  let playerWin = true;
+  showsChoices(myChoice, pcChoice);
+
+  if (pcChoice === myChoice) {
+    return
+  }
+
+  if (
+    myChoice == "pedra" && pcChoice == "tesoura"
+    || myChoice == "papel" && pcChoice == "pedra"
+    || myChoice == "tesoura" && pcChoice == "papel"
+  ) {
+    playerWin = false;
+  };
+
+  roundWinner(playerWin)
 };
 
-const adicinaEvento = (iten) => {
-    for (let i = 0; i < iten.length; i++) {
-        iten[i].addEventListener('click', pegaValores);
-    };
-};
-
-const pegaValores = (id) => {
-    let androidSpan = pegaSeletor('android-pontos')[0];
-    let homemSpan = pegaSeletor('homem-pontos')[0];
-
-    let divPlayers = [homemSpan,androidSpan]
-    let minhaEscolha = id.target.alt;
-
-    verificarVencedor(minhaEscolha, divPlayers)
-};
-
-const verificarVencedor = (minhaEscolha, divPlayers) => {
-    let lista = ["pedra", "papel", "tesoura"];
-    let pc = lista[numeroRandon()];
-    let vencedor;
-    mostraEscolhas(minhaEscolha, pc);
-
-    if (pc === minhaEscolha){
-        vencedor = 3;
-    }
-
-    if (minhaEscolha == "pedra"){
-        if (pc == "papel") {
-            vencedor = 1;
-        };
-        if (pc == "tesoura") {
-            vencedor = 0;
-        };
-    };
-
-    if (minhaEscolha == "papel"){
-        if (pc == "pedra") {
-            vencedor = 0;
-        };
-        if (pc == "tesoura") {
-            vencedor = 1;
-        };
-    };
-
-    if (minhaEscolha == "tesoura"){
-        if (pc == "pedra") {
-            vencedor = 1;
-        };
-        if (pc == "papel") {
-            vencedor = 0;
-        };
-    };
-
-    if (vencedor !== 3){
-        let postos = Number(divPlayers[vencedor].innerText) + 1;
-        divPlayers[vencedor].innerText = postos;
-        vencedorRodada(divPlayers, vencedor)
-    }
-};
-
-const mostraEscolhas = (minha , pc) => {
-    let divImg = pegaSeletor('escolha');
-    divImg[0].src = `src/img/jokempo/${minha}.png`
-    divImg[1].src = `src/img/jokempo/${pc}.png`
+const showsChoices = (myChoice, pcChoice) => {
+  let divImg = pegaSeletor('escolha');
+  divImg[0].src = `src/img/jokempo/${myChoice}.png`
+  divImg[1].src = `src/img/jokempo/${pcChoice}.png`
 }
 
-const vencedorRodada = (player, vencedor) => {
-    let divImg = pegaSeletor('jogador');
-    divImg[vencedor].classList.add('vibra')
-    setTimeout(function(){ divImg[vencedor].classList.remove('vibra'); }, 500);
+const roundWinner = (playerWin) => {
+  const winner = playerWin ? 0 : 1
+  const divAvatar = document.querySelectorAll('.player');
+  divAvatar[winner].classList.add('vibra')
+  setTimeout(() => divAvatar[winner].classList.remove('vibra'), 500);
 }
 
-const jokempo = () => {
-    let button = pegaSeletor('player_button');
-    adicinaEvento(button)
-};
-
-jokempo();
+const screen = document.querySelector(".player_box .option");
+screen.addEventListener("click", checkEventClick)

@@ -2,53 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/img/iconeindez.png" type="image/x-icon">
-    <link rel="stylesheet" href="src/style/style.css">
-    <link rel="stylesheet" href="src/style/jokempo.css">
-    <title>Jokempo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="src/img/iconeindez.png" type="image/x-icon">
+  <link rel="stylesheet" href="src/style/style.css">
+  <link rel="stylesheet" href="src/style/jokempo.css">
+  <title>Jokempo</title>
 </head>
 
 <body>
-    <header>
-        <h1>Sala de Games</h1>
-    </header>
-    <div class="placar">
-        <img src="src/img/jokempo/homem.png" alt="" class="icone">
-        <span class="homem-pontos">0</span>
-        <a href="index.html" class="voltar">&lt; Voltar</a>
-        <span>X</span>
-        <span class="android-pontos">0</span>
-        <img src="src/img/jokempo/android.png" alt="android" class="icone">
+  <header>
+    <a href="index.html" class="back">&lt; Voltar</a>
+    <h1>Sala de Games</h1>
+  </header>
+  <div class="scoreboard">
+    <img src="src/img/jokempo/homem.png" alt="player" class="icone">
+    <span id="player_points">0</span> X <span id="android_points">0</span>
+    <img src="src/img/jokempo/android.png" alt="android" class="icone">
+  </div>
+  <div id="screen">
+    <div class="player_box div_player">
+      <img src="src/img/jokempo/homem.png" class="icone escolha">
+      <img src="src/img/jokempo/homem.png" class="player">
+      <div class="option">
+        <button><img src="src/img/jokempo/pedra.png" alt="pedra" class="icone player_button"></button>
+        <button><img src="src/img/jokempo/papel.png" alt="papel" class="icone player_button"></button>
+        <button><img src="src/img/jokempo/tesoura.png" alt="tesoura" class="icone player_button"></button>
+      </div>
     </div>
-    <div class="screen">
-        <div class="player div_player">
-            <img src="src/img/jokempo/homem.png" alt="" class="icone escolha">
-            <img src="src/img/jokempo/homem.png" alt="" class="jogador">
-            <div class="opcoes">
-                <button><img src="src/img/jokempo/pedra.png" alt="pedra" class="icone player_button"></button>
-                <button><img src="src/img/jokempo/papel.png" alt="papel" class="icone player_button"></button>
-                <button><img src="src/img/jokempo/tesoura.png" alt="tesoura" class="icone player_button"></button>
-            </div>
-        </div>
-        <div class="android div_player">
-            <img src="src/img/jokempo/android.png" alt="" class="icone escolha">
-            <img src="src/img/jokempo/android.png" alt="" class="jogador">
-            <div class="opcoes">
-                <button><img src="src/img/jokempo/pedra.png" alt="pedra" class="icone"></button>
-                <button><img src="src/img/jokempo/papel.png" alt="papel" class="icone"></button>
-                <button><img src="src/img/jokempo/tesoura.png" alt="tesoura" class="icone"></button>
-            </div>
-        </div>
+    <div class="android div_player">
+      <img src="src/img/jokempo/android.png" class="icone escolha">
+      <img src="src/img/jokempo/android.png" class="player">
+      <div class="option">
+        <button><img src="src/img/jokempo/pedra.png" alt="pedra" class="icone"></button>
+        <button><img src="src/img/jokempo/papel.png" alt="papel" class="icone"></button>
+        <button><img src="src/img/jokempo/tesoura.png" alt="tesoura" class="icone"></button>
+      </div>
     </div>
-    <div class="vencedor hidden">Venceu</div>
-    <footer>
-        <h2>Criado por <strong>Matheus H. Burei</strong></h2>
-    </footer>
+  </div>
+  <div class="vencedor hidden">Venceu</div>
+  <footer>
+    <h2>Criado por <strong>Matheus H. Burei</strong></h2>
+  </footer>
 
-    <script src="src/js/jokempo.js"></script>
+  <script src="src/js/jokempo.js"></script>
 </body>
 
 </html>
